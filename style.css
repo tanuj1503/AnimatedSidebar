@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*to get the content in the center of the body*/
+body{
+    background-color: rgb(224, 248, 11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*position: absolute; is positioned relative to the 
+nearest positioned ancestor*/
+.navbar{
+    position: absolute;
+    background-color: rgb(106, 53, 252);
+    width: 80px;
+    height: 370px;
+    line-height: 90px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 12px rgba(0,0,0,0.6);
+}
+
+/*position: relative; is positioned relative to its normal position*/
+.navbar ul{
+    position: relative;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+}
+.navbar ul li {
+    position: relative;
+    list-style: none; /*to make bullets disappear*/
+}
+.navbar ul li .icon{
+    position: relative;
+    font-size: 24px;
+    margin-left: 0.3rem;
+    width: 67px;
+    margin-top: 1.5rem;
+    padding: 12px 24px;
+    
+}
+
+.navbar ul li .icon:hover{
+    background-color: rgb(245, 245, 236);
+    border-radius: 8px;
+    color: rgb(114, 197, 245);
+    font-weight: 900;
+}
+.navbar ul li .title{
+    position: relative;
+    margin-left: 1rem;
+    font-size: 18px;
+    background-color: beige;
+    padding: 8px 16px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*for creation of Tooltip*/
+
+/*The ::before pseudo-element can be used to insert 
+some content before the content of an element.*/
+
+/*The ::after pseudo-element can be used to insert
+ some content after the content of an element.*/
+
+ /* IMPORTANT PROPERTY{ content:" "}*/
+.title::before{
+    position: absolute;
+    content: "";
+    background-color: beige;
+    width: 15px;
+    height: 15px;
+    margin-top: 2.5rem;
+    margin-left: -1.3rem;
+    transform: rotate(45deg);
+}
+.navbar ul li:hover .title{
+    visibility: visible;
+    opacity: 1;
+    margin-left:1.4rem;
+    transition: all 1s ease-in-out;
+}
